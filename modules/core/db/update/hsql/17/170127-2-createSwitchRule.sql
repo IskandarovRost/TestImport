@@ -1,0 +1,10 @@
+alter table switch_rule add constraint FK_SWITCH_RULE_BEGIN_MODE foreign key (BEGIN_MODE_ID) references mode(ID);
+alter table switch_rule add constraint FK_SWITCH_RULE_END_MODE foreign key (END_MODE_ID) references mode(ID);
+alter table switch_rule add constraint FK_SWITCH_RULE_BEFORE_DISPATCH foreign key (BEFORE_DISPATCH_ID) references introspection_dispatch(ID);
+alter table switch_rule add constraint FK_SWITCH_RULE_AFTER_DISPATCH foreign key (AFTER_DISPATCH_ID) references introspection_dispatch(ID);
+alter table switch_rule add constraint FK_SWITCH_RULE_CONDITION_DISPATCH foreign key (CONDITION_DISPATCH_ID) references introspection_dispatch(ID);
+create index IDX_SWITCH_RULE_END_MODE on switch_rule (END_MODE_ID);
+create index IDX_SWITCH_RULE_BEFORE_DISPATCH on switch_rule (BEFORE_DISPATCH_ID);
+create index IDX_SWITCH_RULE_CONDITION_DISPATCH on switch_rule (CONDITION_DISPATCH_ID);
+create index IDX_SWITCH_RULE_BEGIN_MODE on switch_rule (BEGIN_MODE_ID);
+create index IDX_SWITCH_RULE_AFTER_DISPATCH on switch_rule (AFTER_DISPATCH_ID);

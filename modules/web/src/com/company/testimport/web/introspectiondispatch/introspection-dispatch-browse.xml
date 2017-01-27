@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.testimport.web.introspectiondispatch.IntrospectionDispatchBrowse"
+        focusComponent="introspectionDispatchesTable"
+        lookupComponent="introspectionDispatchesTable"
+        messagesPack="com.company.testimport.web.introspectiondispatch">
+    <dsContext>
+        <groupDatasource id="introspectionDispatchesDs"
+                         class="com.company.testimport.entity.IntrospectionDispatch"
+                         view="_local">
+            <query>
+                <![CDATA[select e from testimport$IntrospectionDispatch e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="introspectionDispatchesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="introspectionDispatchesTable"
+                datasource="introspectionDispatchesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="introspectionDispatchesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="category"/>
+                <column id="packageName"/>
+                <column id="moduleName"/>
+                <column id="className"/>
+                <column id="funcName"/>
+            </columns>
+            <rows datasource="introspectionDispatchesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="introspectionDispatchesTable.create"/>
+                <button id="editBtn"
+                        action="introspectionDispatchesTable.edit"/>
+                <button id="removeBtn"
+                        action="introspectionDispatchesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

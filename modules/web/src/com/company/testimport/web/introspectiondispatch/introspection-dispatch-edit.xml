@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.testimport.web.introspectiondispatch.IntrospectionDispatchEdit"
+        datasource="introspectionDispatchDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.testimport.web.introspectiondispatch">
+    <dsContext>
+        <datasource id="introspectionDispatchDs"
+                    class="com.company.testimport.entity.IntrospectionDispatch"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="introspectionDispatchDs">
+            <column width="250px">
+                <field id="name"/>
+                <field id="category"/>
+                <field id="packageName"/>
+                <field id="moduleName"/>
+                <field id="className"/>
+                <field id="funcName"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

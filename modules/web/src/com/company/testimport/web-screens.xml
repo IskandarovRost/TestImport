@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <include file="com/company/testimport/screens.xml"/>
+    <screen id="testimport$IntrospectionDispatch.browse"
+            template="com/company/testimport/web/introspectiondispatch/introspection-dispatch-browse.xml"/>
+    <screen id="testimport$IntrospectionDispatch.edit"
+            template="com/company/testimport/web/introspectiondispatch/introspection-dispatch-edit.xml"/>
+    <screen id="testimport$Mode.browse"
+            template="com/company/testimport/web/mode/mode-browse.xml"/>
+    <screen id="testimport$Mode.edit"
+            template="com/company/testimport/web/mode/mode-edit.xml"/>
+    <screen id="testimport$SwitchRule.browse"
+            template="com/company/testimport/web/switchrule/switch-rule-browse.xml"/>
+    <screen id="testimport$SwitchRule.edit"
+            template="com/company/testimport/web/switchrule/switch-rule-edit.xml"/>
+    <screen id="testimport$Book.browse"
+            template="com/company/testimport/web/book/book-browse.xml"/>
+    <screen id="testimport$Writer.browse"
+            template="com/company/testimport/web/writer/writer-browse.xml"/>
+    <screen id="testimport$Writer.edit"
+            template="com/company/testimport/web/writer/writer-edit.xml"/>
+</screen-config>

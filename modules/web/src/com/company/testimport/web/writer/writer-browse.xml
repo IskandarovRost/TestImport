@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://caption"
+        class="com.company.testimport.web.writer.WriterBrowse"
+        focusComponent="writersTable"
+        lookupComponent="writersTable"
+        messagesPack="com.company.testimport.web.writer">
+    <dsContext>
+        <datasource id="writerDs"
+                    class="com.company.testimport.entity.Writer"
+                    view="writer-view"/>
+        <groupDatasource id="writersDs"
+                         class="com.company.testimport.entity.Writer"
+                         view="writer-view">
+            <query>
+                <![CDATA[select e from testimport$Writer e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <actions>
+        <action id="save"
+                caption="mainMsg://actions.Ok"
+                icon="icons/ok.png"
+                invoke="save"
+                shortcut="CTRL-ENTER"/>
+        <action id="cancel"
+                caption="mainMsg://actions.Cancel"
+                icon="icons/cancel.png"
+                invoke="cancel"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout>
+        <split id="split"
+               height="100%"
+               orientation="horizontal"
+               reversePosition="true"
+               width="100%">
+            <vbox id="lookupBox"
+                  expand="writersTable"
+                  height="100%"
+                  margin="false,true,false,false"
+                  spacing="true">
+                <filter id="filter"
+                        applyTo="writersTable"
+                        datasource="writersDs">
+                    <properties include=".*"/>
+                </filter>
+                <groupTable id="writersTable"
+                            width="100%">
+                    <actions>
+                        <action id="create"/>
+                        <action id="edit"/>
+                        <action id="remove"/>
+                    </actions>
+                    <columns>
+                        <column id="name"/>
+                        <column id="firstWrittenBook"/>
+                        <column id="secondWritenBook"/>
+                        <column id="thirdWrittenBook"/>
+                    </columns>
+                    <rows datasource="writersDs"/>
+                    <rowsCount/>
+                    <buttonsPanel id="buttonsPanel"
+                                  alwaysVisible="true">
+                        <button id="createBtn"
+                                action="writersTable.create"/>
+                        <button id="editBtn"
+                                action="writersTable.edit"/>
+                        <button id="removeBtn"
+                                action="writersTable.remove"/>
+                    </buttonsPanel>
+                </groupTable>
+            </vbox>
+            <vbox id="editBox"
+                  expand="fieldGroupBox"
+                  height="100%"
+                  margin="false,false,false,true"
+                  spacing="true">
+                <vbox id="fieldGroupBox">
+                    <fieldGroup id="fieldGroup"
+                                datasource="writerDs">
+                        <column width="250px">
+                            <field id="name"/>
+                            <field id="firstWrittenBook"/>
+                            <field id="secondWritenBook"/>
+                            <field id="thirdWrittenBook"/>
+                        </column>
+                    </fieldGroup>
+                </vbox>
+                <hbox id="actionsPane"
+                      spacing="true"
+                      visible="false">
+                    <button id="saveBtn"
+                            action="save"/>
+                    <button id="cancelBtn"
+                            action="cancel"/>
+                </hbox>
+            </vbox>
+        </split>
+    </layout>
+</window>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+    <view class="com.company.testimport.entity.SwitchRule"
+          extends="_local"
+          name="SwitchRule-screen-view">
+        <property name="beginMode"
+                  view="_minimal"/>
+        <property name="endMode"
+                  view="_minimal"/>
+        <property name="beforeDispatch"
+                  view="_minimal"/>
+        <property name="afterDispatch"
+                  view="_minimal"/>
+        <property name="conditionDispatch"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.testimport.entity.Writer"
+          extends="_local"
+          name="writer-view">
+        <property name="firstWrittenBook"
+                  view="_minimal"/>
+        <property name="secondWritenBook"
+                  view="_minimal"/>
+        <property name="thirdWrittenBook"
+                  view="_minimal"/>
+    </view>
+</views>
